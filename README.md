@@ -1,3 +1,5 @@
+https://programmer.group/docker-installs-jira-and-confluence-cracked-version.html
+
 ## Jira
 
 - `docker compose exec -w /opt/atlassian/jira/ jira java -jar atlassian-agent.jar -d -m test@test.com -n BAT -p jira -o http://localhost:18009 -s <COPY FROM WEB>`
