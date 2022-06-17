@@ -1,0 +1,47 @@
+version: "3.3"
+
+services:
+  confluence:
+    build:
+      context: ./confluence
+      dockerfile: Dockerfile
+    ports:
+      - 18010:8090
+    volumes:
+      - app-confluence-data:/var/atlassian/confluence
+    environment:
+      TZ: Asia/Ho_Chi_Minh
+    restart: always
+
+  jira:
+    build:
+      context: ./jira
+      dockerfile: Dockerfile
+    ports:
+      - 18009:8080
+    volumes:
+      - app-jira-data:/var/atlassian/jira
+    environment:
+      TZ: Asia/Ho_Chi_Minh
+    restart: always
+
+  postgres:
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+      args:
+        BASE_CONTAINER: postgres:14.0-alpine
+    volumes:
+      - app-postgres-data:/var/lib/postgresql/data/
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: postgres_user
+      POSTGRES_PASSWORD: postgres_password
+    expose:
+      - 5432
+    restart: unless-stopped
+
+volumes:
+  app-confluence-data:
+  app-jira-data:
+  app-postgres-data:

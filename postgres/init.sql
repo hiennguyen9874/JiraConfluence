@@ -1,0 +1,7 @@
+-- CREATE USER postgres_user;
+
+CREATE DATABASE jira;
+GRANT ALL PRIVILEGES ON DATABASE jira TO postgres_user;
+
+CREATE DATABASE wiki;
+GRANT ALL PRIVILEGES ON DATABASE wiki TO postgres_user;
