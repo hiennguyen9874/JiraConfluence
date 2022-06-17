@@ -1,4 +1,4 @@
-ARG BASE_CONTAINER=cptactionhank/atlassian-confluence:latest
+ARG BASE_CONTAINER=atlassian/confluence:7.8.3
 
 FROM ubuntu:latest as zip
 

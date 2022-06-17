@@ -1,4 +1,4 @@
-ARG BASE_CONTAINER=cptactionhank/atlassian-jira:latest
+ARG BASE_CONTAINER=atlassian/jira-software:8.22.3
 
 FROM ubuntu:latest as zip
 
@@ -23,4 +23,3 @@ COPY --from=zip /tmp/atlassian-agent-v1.3.1/atlassian-agent.jar /opt/atlassian/j
 
 # Set Startup Loading Agent Package
 RUN echo 'export CATALINA_OPTS="-javaagent:/opt/atlassian/jira/atlassian-agent.jar ${CATALINA_OPTS}"' >> /opt/atlassian/jira/bin/setenv.sh
-

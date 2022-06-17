@@ -6,7 +6,7 @@ services:
       context: ./confluence
       dockerfile: Dockerfile
       args:
-        BASE_CONTAINER: cptactionhank/atlassian-confluence:latest
+        BASE_CONTAINER: atlassian/confluence:7.8.3
     ports:
       - 18010:8090
     volumes:
@@ -22,7 +22,7 @@ services:
       context: ./jira
       dockerfile: Dockerfile
       args:
-        BASE_CONTAINER: cptactionhank/atlassian-jira:latest
+        BASE_CONTAINER: atlassian/jira-software:8.22.3
     ports:
       - 18009:8080
     volumes:
