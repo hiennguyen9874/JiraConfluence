@@ -1,3 +1,5 @@
+ARG BASE_CONTAINER=cptactionhank/atlassian-confluence:latest
+
 FROM ubuntu:latest as zip
 
 RUN export DEBIAN_FRONTEND=noninteractive
@@ -12,7 +14,7 @@ RUN wget --no-check-certificate https://gitee.com/pengzhile/atlassian-agent/atta
 
 RUN unzip atlassian-agent-v1.3.1.zip
 
-FROM cptactionhank/atlassian-confluence:latest as base
+FROM $BASE_CONTAINER as base
 
 USER root
 

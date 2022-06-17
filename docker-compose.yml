@@ -5,24 +5,32 @@ services:
     build:
       context: ./confluence
       dockerfile: Dockerfile
+      args:
+        BASE_CONTAINER: cptactionhank/atlassian-confluence:latest
     ports:
       - 18010:8090
     volumes:
       - app-confluence-data:/var/atlassian/confluence
     environment:
       TZ: Asia/Ho_Chi_Minh
+    depends_on:
+      - postgres
     restart: always
 
   jira:
     build:
       context: ./jira
       dockerfile: Dockerfile
+      args:
+        BASE_CONTAINER: cptactionhank/atlassian-jira:latest
     ports:
       - 18009:8080
     volumes:
       - app-jira-data:/var/atlassian/jira
     environment:
       TZ: Asia/Ho_Chi_Minh
+    depends_on:
+      - postgres
     restart: always
 
   postgres:
