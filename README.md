@@ -8,3 +8,7 @@ https://programmer.group/docker-installs-jira-and-confluence-cracked-version.htm
 ## Confluence
 
 - `docker compose exec -w /opt/atlassian/confluence/ confluence java -jar atlassian-agent.jar -d -m test@test.com -n BAT -p conf -o http://<IP>:18010 -s <COPY FROM WEB>`
+
+# TODO
+
+- Bitbucket
