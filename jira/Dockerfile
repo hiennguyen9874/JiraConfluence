@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends zip unzip wget
 
 WORKDIR /tmp
 
-RUN wget --no-check-certificate https://gitee.com/pengzhile/atlassian-agent/attach_files/832833/download/atlassian-agent-v1.3.1.zip
+RUN wget --no-check-certificate https://github.com/hiennguyen9874/JiraConfluence/releases/download/v0.1/atlassian-agent-v1.3.1.zip
 
 RUN unzip atlassian-agent-v1.3.1.zip
 
